@@ -9,5 +9,7 @@ set(EXPORT_COMPILE_COMMANDS TRUE)
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(facebreak src/main.cpp)
-target_link_libraries(facebreak ${OpenCV_LIBS})
+include_directories(src)
+
+add_executable(open_gaze src/main.cpp src/vision/vision.cpp)
+target_link_libraries(open_gaze ${OpenCV_LIBS})

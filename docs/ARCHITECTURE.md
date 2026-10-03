@@ -1,5 +1,12 @@
 # Design Doc
 
+---
+config:
+  theme: redux-color
+  look: neo
+  htmlLabels: true
+---
+
 **Author:** Kingsley  
 **Status:** Draft / In Review  
 **Created:** 2026-09-28  
@@ -35,7 +42,25 @@ To minimize / eliminate unnecessary friction when working by having a smart, per
   * Calendar: Turns events into OS level actions (e.g. Opening apps, websites)
 
 
-### 2.1 Interactions Between Systems
+### 2.1.1 Vision System
 ```mermaid
+%%{init: {'theme': 'redux-color', 'look': 'neo'} }%%
+%%Vision System
+graph LR
+  subgraph Inputs
+    WebCam[WebCam]
+    FaceRef["Face Reference (me.jpg)"]
+  end
 
+  subgraph Processing
+    Frame[Frame Compression]
+    FaceID[FaceID]
+    Mesh[Facial Feature Extraction]
+  end
+
+  subgraph Output
+    out[result]
+  end
+  WebCam --> FaceRef
+  Frame --> FaceID --> Mesh
 ```

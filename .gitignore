@@ -3,3 +3,5 @@ compile_commands.json
 
 .aider*
 model/
+.env
+.venv
